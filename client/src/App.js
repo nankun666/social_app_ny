@@ -7,7 +7,7 @@ import {
   Outlet,
   Navigate,
 } from "react-router-dom";
-import Navbar from "./components/navbar/Navbar";
+import Navbar from "./components/navBar/Navbar";
 import LeftBar from "./components/leftBar/LeftBar";
 import RightBar from "./components/rightBar/RightBar";
 import Home from "./pages/home/Home";
