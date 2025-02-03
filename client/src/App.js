@@ -10,7 +10,7 @@ import {
 import Navbar from "./components/navBar/Navbar";
 import LeftBar from "./components/leftBar/LeftBar";
 import RightBar from "./components/rightBar/RightBar";
-import Home from "./pages/home/Home";
+import Home from "./pages/home/home";
 import Profile from "./pages/profile/Profile";
 import "./style.scss";
 import { useContext } from "react";
