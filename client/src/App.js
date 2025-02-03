@@ -1,5 +1,5 @@
 import Login from "./pages/login/Login";
-import Register from "./pages/register/Register";
+import Register from "./pages/register/register";
 import {
   createBrowserRouter,
   RouterProvider,
