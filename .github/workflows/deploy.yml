@@ -1,0 +1,36 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main # 监听主分支的 push
+  pull_request:
+    branches:
+      - main # 监听 PR 到主分支的推送
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # 使用最新的 Ubuntu 环境
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2 # 拉取代码
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16" # 使用 Node.js 16.x（可以根据需求调整版本）
+
+      - name: Install dependencies with Yarn
+        run: yarn install # 安装依赖
+
+      - name: Build project
+        run: yarn build # 构建项目
+
+      - name: Deploy to Vercel
+        env:
+          VERCELE_API_TOKEN: ${{ secrets.VERCEL_TOKEN }} # 使用 GitHub Secrets 存储 Vercel 的 API Token
+        run: |
+          curl -fsSL https://vercel.com/download -o vercel-cli.tar.gz
+          tar -xzf vercel-cli.tar.gz
+          sudo mv vercel /usr/local/bin
+          vercel --token $VERCELE_API_TOKEN --prod  # 部署到 Vercel
