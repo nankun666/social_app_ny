@@ -1,1 +1,1 @@
-ny.nankun.liang.com
+https://nyer.nankunliang.com/login
